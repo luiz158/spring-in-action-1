@@ -7,9 +7,20 @@
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+	<!-- components -->
 	<bean id="knight" class="com.springinaction.knights.BraveKnight">
 		<constructor-arg ref="quest" />
 	</bean>
-
 	<bean id="quest" class="com.springinaction.knights.SlayDragonQuest" />
+	<bean id="minstrel" class="com.springinaction.knights.Minstrel" />
+
+	<aop:config>
+		<!-- aspects -->
+		<aop:aspect ref="minstrel">
+			<aop:pointcut id="embark" expression="execution(* *.embarkOnQuest(..))" />
+			<aop:before pointcut-ref="embark" method="singBeforeQuest" />
+			<aop:after pointcut-ref="embark" method="singAfterQuest" />
+		</aop:aspect>
+	</aop:config>
+
 </beans>
