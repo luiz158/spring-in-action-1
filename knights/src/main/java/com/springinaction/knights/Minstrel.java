@@ -8,7 +8,7 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class Minstrel {
 	
-	@Pointcut("execution(* *.embarkOnQuest(..))")
+	@Pointcut("execution(void com.springinaction.knights.Knight.embarkOnQuest())")
 	public void embark() {
 	}
 
