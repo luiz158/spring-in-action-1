@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class KingdomTalesConfiguration {
 
+	// beans
 	@Bean
 	public Quest quest() {
 		return new SlayDragonQuest();
@@ -14,5 +15,11 @@ public class KingdomTalesConfiguration {
 	@Bean 
 	public Knight knight() {
 		return new BraveKnight(quest());
+	}
+	
+	// aspects
+	@Bean 
+	public Minstrel minstrel() {
+		return new Minstrel();
 	}
 }
