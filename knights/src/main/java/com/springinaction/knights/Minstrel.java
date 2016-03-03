@@ -1,5 +1,8 @@
 package com.springinaction.knights;
 
+import org.springframework.stereotype.Component;
+
+@Component("minstrel")
 public class Minstrel {
 
 	public void singBeforeQuest() {
