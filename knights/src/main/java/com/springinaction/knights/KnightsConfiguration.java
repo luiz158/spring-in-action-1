@@ -1,11 +1,12 @@
 package com.springinaction.knights;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
 
 @Configuration
 public class KnightsConfiguration {
+
 
 	// beans
 	@Bean
@@ -13,7 +14,7 @@ public class KnightsConfiguration {
 		return new SlayDragonQuest();
 	}
 
-	@Bean 
+	@Bean(name=Names.BEAN_KNIGHT) 
 	public Knight knight() {
 		return new BraveKnight(quest());
 	}
