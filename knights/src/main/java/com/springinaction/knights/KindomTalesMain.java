@@ -3,7 +3,7 @@ package com.springinaction.knights;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class KnightMain {
+public class KindomTalesMain {
 
 	public static void main(String[] args) {
 		try (ConfigurableApplicationContext context = new AnnotationConfigApplicationContext("com.springinaction.knights")) {
